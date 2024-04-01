@@ -2,7 +2,7 @@
   "name": "video-local-streamer",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,9 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
     "express": "^4.19.1",
-    "nodemon": "^3.1.0",
-    "pm2": "^5.3.1"
+    "nodemon": "^3.1.0"
   }
 }

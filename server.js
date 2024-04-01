@@ -1,10 +1,9 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
-const pm2 = require("pm2"); // Requires PM2 installed globally
-const cors = require("cors");
+// const cors = require("cors");
 const directory = require("./globa").location;
-
+const os = require("os");
 const app = express();
 const port = process.env.PORT || 3000; // Set a port for server listening
 const corsOptions = {
@@ -12,7 +11,7 @@ const corsOptions = {
   optionsSuccessStatus: 200, // Optional: Code to send for preflight requests
 };
 
-app.use(cors(corsOptions)); // Apply CORS middleware to all routes
+// app.use(cors(corsOptions)); // Apply CORS middleware to all routes
 
 // Serve static files from the 'public' directory (for placeholder HTML)
 app.use(express.static(path.join(__dirname, "frontend/build")));
@@ -34,7 +33,7 @@ app.all("/api/videoslist/:path?", (req, res) => {
 });
 
 app.get("/test", function (req, res) {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/aaaindex.html");
 });
 
 app.all("/api/play/:path/:file", (req, res) => {
