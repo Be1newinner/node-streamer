@@ -3,6 +3,7 @@ const path = require("path");
 const fs = require("fs");
 const pm2 = require("pm2"); // Requires PM2 installed globally
 const cors = require("cors");
+const directory = require("./globa").location;
 
 const app = express();
 const port = process.env.PORT || 3000; // Set a port for server listening
@@ -16,7 +17,7 @@ app.use(cors(corsOptions)); // Apply CORS middleware to all routes
 // Serve static files from the 'public' directory (for placeholder HTML)
 app.use(express.static(path.join(__dirname, "frontend/build")));
 
-const storagePath = path.join(__dirname, "storage");
+const storagePath = directory;
 // const CHUNK_SIZE = 10 * 1024 * 1024; // Adjust chunk size based on your needs (e.g., 10 MB)
 
 // Serve video files from the 'storage' directory (placeholder)
